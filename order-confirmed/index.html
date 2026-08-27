@@ -115,6 +115,8 @@ textarea{min-height:120px;resize:vertical}
           <p style="margin:6px 0 0;color:var(--muted)">We'll contact you to confirm your preferred domain name, booking link and any final website details before launch.</p>
         </div>
 
+        <a class="button button-primary button-wide" id="whatsappConfirm" href="#">Send Order Confirmation on WhatsApp</a>
+        <p class="note" style="text-align:center">Tap to send us your order confirmation so we can match your purchase to your property.</p>
         <a class="button button-dark button-wide" href="https://getmyvideo.co.uk">Back to GetMyVideo</a>
       </div>
     </section>
@@ -139,6 +141,15 @@ textarea{min-height:120px;resize:vertical}
     document.getElementById('packageName').textContent = chosen.name;
     document.getElementById('packagePrice').textContent = chosen.price;
     if (p === '349') document.getElementById('websiteMessage').classList.add('show');
+
+    const whatsappMessage = encodeURIComponent(
+      'NEW GETMYVIDEO PREVIEW ORDER\n\n' +
+      'Package: ' + chosen.name + (chosen.price ? ' - ' + chosen.price : '') + '\n' +
+      'Payment completed via Stripe.\n' +
+      'I purchased from my personalised property preview.'
+    );
+    document.getElementById('whatsappConfirm').href =
+      'https://wa.me/447367856186?text=' + whatsappMessage;
   </script>
 </body>
 </html>
