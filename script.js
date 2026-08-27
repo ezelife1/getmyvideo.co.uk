@@ -1,8 +1,8 @@
 // Replace these placeholders with your actual Stripe Payment Links.
 const STRIPE_LINKS = {
-  premium: '', // e.g. https://buy.stripe.com/xxxxx
-  social: '',  // e.g. https://buy.stripe.com/yyyyy
-  website: ''  // e.g. https://buy.stripe.com/zzzzz
+  premium: 'https://buy.stripe.com/bJebJ2bcY2V539HcjIf3a07',
+  social: 'https://buy.stripe.com/5kQ9AU6WIanxdOl2J8f3a08',
+  website: 'https://buy.stripe.com/aFabJ2ftecvF25DbfEf3a09'
 };
 
 document.getElementById('year').textContent = new Date().getFullYear();
