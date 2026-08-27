@@ -10,70 +10,182 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
+
   <style>
-    /* GetMyVideo four-package pricing layout */
+    /* GetMyVideo compact four-package pricing layout */
+    #pricing{padding-left:0!important;padding-right:0!important}
     #pricing .pricing-grid{
-      display:grid !important;
-      grid-template-columns:repeat(4,minmax(0,1fr)) !important;
-      gap:16px !important;
-      width:min(1500px,calc(100vw - 48px)) !important;
-      max-width:none !important;
-      margin-left:50% !important;
-      margin-right:0 !important;
-      transform:translateX(-50%) !important;
-      align-items:stretch !important;
+      display:grid!important;
+      grid-template-columns:repeat(4,minmax(0,1fr))!important;
+      gap:14px!important;
+      width:min(1380px,calc(100vw - 56px))!important;
+      max-width:none!important;
+      margin:0 auto!important;
+      transform:none!important;
+      align-items:stretch!important;
     }
     #pricing .price-card{
-      min-width:0 !important;
-      width:auto !important;
-      height:100% !important;
-      display:flex !important;
-      flex-direction:column !important;
-      transform:none !important;
-      margin:0 !important;
-      padding:26px 24px !important;
+      min-width:0!important;
+      width:auto!important;
+      height:auto!important;
+      min-height:0!important;
+      display:flex!important;
+      flex-direction:column!important;
+      padding:22px 20px 20px!important;
+      border-radius:18px!important;
+      transform:none!important;
+      margin:0!important;
     }
-    #pricing .price-card ul{flex:1 !important;}
-    #pricing .price-card > .button{margin-top:auto !important;width:100% !important;}
-    #pricing .price-top{gap:12px !important;align-items:flex-start !important;}
-    #pricing .price-top h3{font-size:clamp(1.55rem,1.75vw,2.15rem) !important;line-height:1.05 !important;}
-    #pricing .price{font-size:clamp(2.5rem,3.2vw,3.8rem) !important;white-space:nowrap !important;}
-    #pricing .managed-price span{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;margin-left:3px;}
+    #pricing .price-top{
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr) auto!important;
+      gap:10px!important;
+      align-items:start!important;
+      margin-bottom:10px!important;
+    }
+    #pricing .plan-label{
+      font-size:.58rem!important;
+      letter-spacing:.13em!important;
+      line-height:1.3!important;
+    }
+    #pricing .price-top h3{
+      font-size:clamp(1.35rem,1.55vw,1.85rem)!important;
+      line-height:1.04!important;
+      margin:8px 0 0!important;
+    }
+    #pricing .price{
+      font-size:clamp(2.3rem,2.75vw,3.2rem)!important;
+      line-height:.92!important;
+      white-space:nowrap!important;
+    }
+    #pricing .managed-price span{
+      font-family:'DM Sans',sans-serif!important;
+      font-size:.78rem!important;
+      font-weight:700!important;
+      margin-left:2px!important;
+    }
+    #pricing .plan-intro{
+      font-size:.84rem!important;
+      line-height:1.45!important;
+      margin:2px 0 12px!important;
+    }
+    #pricing .price-card ul{
+      flex:1!important;
+      min-height:0!important;
+      margin:6px 0 16px!important;
+      padding-left:0!important;
+      list-style:none!important;
+    }
+    #pricing .price-card li{
+      position:relative!important;
+      margin:0!important;
+      padding:8px 0 8px 24px!important;
+      border-bottom:1px solid rgba(16,19,22,.08)!important;
+      font-size:.82rem!important;
+      line-height:1.35!important;
+    }
+    #pricing .price-card li::before{
+      content:"✓"!important;
+      position:absolute!important;
+      left:0!important;
+      top:8px!important;
+      color:#c8a86b!important;
+      font-weight:800!important;
+    }
+    #pricing .price-card>.button{
+      margin-top:auto!important;
+      width:100%!important;
+      min-height:46px!important;
+      padding:11px 14px!important;
+      font-size:.84rem!important;
+    }
+    #pricing .website-card,
+    #pricing .managed-card{border-color:#c8a86b!important}
     #pricing .managed-card{
-      position:relative !important;
-      border:2px solid #c8a86b !important;
-      background:linear-gradient(180deg,#fff,#fbf7ef) !important;
+      position:relative!important;
+      border:2px solid #c8a86b!important;
+      background:linear-gradient(180deg,#fff,#fbf7ef)!important;
     }
     #pricing .managed-card .popular{
-      position:absolute !important;
-      top:-14px !important;
-      right:18px !important;
-      left:auto !important;
-      width:auto !important;
-      transform:none !important;
-      background:#c8a86b !important;
-      color:#111 !important;
-      border-radius:999px !important;
-      padding:7px 12px !important;
-      font-size:.68rem !important;
-      font-weight:800 !important;
-      letter-spacing:.08em !important;
+      position:absolute!important;
+      top:-11px!important;
+      right:16px!important;
+      left:auto!important;
+      width:auto!important;
+      transform:none!important;
+      background:#c8a86b!important;
+      color:#111!important;
+      border-radius:999px!important;
+      padding:5px 10px!important;
+      font-size:.56rem!important;
+      font-weight:800!important;
+      letter-spacing:.08em!important;
+      line-height:1.2!important;
     }
-    @media (max-width:1180px){
+
+    /* Tablet: 2 x 2, still compact */
+    @media (max-width:1100px){
       #pricing .pricing-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-        width:min(920px,calc(100vw - 40px)) !important;
+        grid-template-columns:repeat(2,minmax(0,1fr))!important;
+        width:min(860px,calc(100vw - 36px))!important;
+        gap:16px!important;
       }
+      #pricing .price-card{padding:20px 18px!important}
     }
+
+    /* Mobile: single column, but compact cards, not giant panels */
     @media (max-width:680px){
+      #pricing .section-heading{padding:0 18px!important}
       #pricing .pricing-grid{
-        grid-template-columns:1fr !important;
-        width:calc(100vw - 28px) !important;
-        gap:18px !important;
+        grid-template-columns:1fr!important;
+        width:calc(100vw - 28px)!important;
+        gap:14px!important;
       }
-      #pricing .price-card{padding:24px 22px !important;}
+      #pricing .price-card{
+        padding:18px 16px 16px!important;
+        border-radius:16px!important;
+      }
+      #pricing .price-top{
+        grid-template-columns:minmax(0,1fr) auto!important;
+        margin-bottom:8px!important;
+      }
+      #pricing .price-top h3{
+        font-size:1.5rem!important;
+        margin-top:5px!important;
+      }
+      #pricing .price{
+        font-size:2.45rem!important;
+      }
+      #pricing .plan-intro{
+        font-size:.8rem!important;
+        margin-bottom:8px!important;
+      }
+      #pricing .price-card ul{
+        display:grid!important;
+        grid-template-columns:1fr 1fr!important;
+        column-gap:14px!important;
+        margin:4px 0 14px!important;
+      }
+      #pricing .price-card li{
+        font-size:.76rem!important;
+        padding:7px 0 7px 20px!important;
+      }
+      #pricing .price-card li::before{
+        top:7px!important;
+      }
+      #pricing .price-card>.button{
+        min-height:44px!important;
+        font-size:.82rem!important;
+      }
+    }
+
+    /* Very narrow phones: keep features readable */
+    @media (max-width:430px){
+      #pricing .price-card ul{grid-template-columns:1fr!important}
+      #pricing .price-card li{font-size:.78rem!important}
     }
   </style>
+
 
 </head>
 <body>
