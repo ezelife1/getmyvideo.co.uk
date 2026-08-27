@@ -9,6 +9,72 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* GetMyVideo four-package pricing layout */
+    #pricing .pricing-grid{
+      display:grid !important;
+      grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+      gap:16px !important;
+      width:min(1500px,calc(100vw - 48px)) !important;
+      max-width:none !important;
+      margin-left:50% !important;
+      margin-right:0 !important;
+      transform:translateX(-50%) !important;
+      align-items:stretch !important;
+    }
+    #pricing .price-card{
+      min-width:0 !important;
+      width:auto !important;
+      height:100% !important;
+      display:flex !important;
+      flex-direction:column !important;
+      transform:none !important;
+      margin:0 !important;
+      padding:26px 24px !important;
+    }
+    #pricing .price-card ul{flex:1 !important;}
+    #pricing .price-card > .button{margin-top:auto !important;width:100% !important;}
+    #pricing .price-top{gap:12px !important;align-items:flex-start !important;}
+    #pricing .price-top h3{font-size:clamp(1.55rem,1.75vw,2.15rem) !important;line-height:1.05 !important;}
+    #pricing .price{font-size:clamp(2.5rem,3.2vw,3.8rem) !important;white-space:nowrap !important;}
+    #pricing .managed-price span{font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;margin-left:3px;}
+    #pricing .managed-card{
+      position:relative !important;
+      border:2px solid #c8a86b !important;
+      background:linear-gradient(180deg,#fff,#fbf7ef) !important;
+    }
+    #pricing .managed-card .popular{
+      position:absolute !important;
+      top:-14px !important;
+      right:18px !important;
+      left:auto !important;
+      width:auto !important;
+      transform:none !important;
+      background:#c8a86b !important;
+      color:#111 !important;
+      border-radius:999px !important;
+      padding:7px 12px !important;
+      font-size:.68rem !important;
+      font-weight:800 !important;
+      letter-spacing:.08em !important;
+    }
+    @media (max-width:1180px){
+      #pricing .pricing-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        width:min(920px,calc(100vw - 40px)) !important;
+      }
+    }
+    @media (max-width:680px){
+      #pricing .pricing-grid{
+        grid-template-columns:1fr !important;
+        width:calc(100vw - 28px) !important;
+        gap:18px !important;
+      }
+      #pricing .price-card{padding:24px 22px !important;}
+    }
+  </style>
+
 </head>
 <body>
   <header class="site-header">
@@ -96,7 +162,6 @@
       </div>
 
       <div class="pricing-grid">
-
         <article class="price-card">
           <div class="price-top">
             <div>
@@ -109,11 +174,11 @@
             <li>45–60 second cinematic property film</li>
             <li>Created from your existing photos</li>
             <li>Premium instrumental music</li>
-            <li>Property name, location & key features</li>
+            <li>Property name, location &amp; key features</li>
             <li>16:9 HD master</li>
             <li>9:16 social-ready version</li>
           </ul>
-          <button class="button button-dark stripe-placeholder" data-package="£99 Premium Property Video" data-plan="premium">Get the £99 video</button>
+          <a class="button button-dark" href="https://buy.stripe.com/bJebJ2bcY2V539HcjIf3a07">Get the £99 video</a>
         </article>
 
         <article class="price-card">
@@ -128,11 +193,11 @@
             <li>Everything in Premium Video</li>
             <li>Social-first edit for Reels/TikTok</li>
             <li>Ready-to-post caption</li>
-            <li>Property-specific hook & CTA</li>
+            <li>Property-specific hook &amp; CTA</li>
             <li>Social cover/thumbnail</li>
-            <li>Hashtags & posting copy</li>
+            <li>Hashtags &amp; posting copy</li>
           </ul>
-          <button class="button button-dark stripe-placeholder" data-package="£149 Video + Social Launch" data-plan="social">Get the £149 package</button>
+          <a class="button button-dark" href="https://buy.stripe.com/5kQ9AU6WIanxdOl2J8f3a08">Get the £149 package</a>
         </article>
 
         <article class="price-card website-card">
@@ -148,15 +213,15 @@
             <li>Everything in Premium Video</li>
             <li>Luxury single-property website</li>
             <li>Cinematic video embedded in the hero</li>
-            <li>Mobile-first design & gallery</li>
-            <li>Amenities, location & local-area sections</li>
-            <li>Reviews, enquiry & booking CTA</li>
+            <li>Mobile-first design &amp; gallery</li>
+            <li>Amenities, location &amp; local-area sections</li>
+            <li>Reviews, enquiry &amp; booking CTA</li>
             <li>Basic on-page SEO</li>
             <li>Domain name included</li>
             <li>12 months hosting included</li>
             <li>Renewal from £79/year after year one</li>
           </ul>
-          <button class="button button-dark stripe-placeholder" data-package="£349 Property Website + Video" data-plan="website">Get the £349 package</button>
+          <a class="button button-dark" href="https://buy.stripe.com/aFabJ2ftecvF25DbfEf3a09">Get the £349 package</a>
         </article>
 
         <article class="price-card managed-card">
@@ -166,7 +231,7 @@
               <span class="plan-label">FULLY MANAGED</span>
               <h3>Website + Film + Care</h3>
             </div>
-            <div class="price">£59<span style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700">/mo</span></div>
+            <div class="price managed-price">£59<span>/mo</span></div>
           </div>
           <p class="plan-intro">Everything you need to launch and keep your property website running, fully managed for you.</p>
           <ul>
@@ -175,13 +240,12 @@
             <li>Domain name included</li>
             <li>Hosting included</li>
             <li>Maintenance included</li>
-            <li>Property/content updates</li>
-            <li>Booking & enquiry CTA</li>
+            <li>Property &amp; content updates</li>
+            <li>Booking / enquiry CTA</li>
             <li><strong>6-month minimum commitment</strong></li>
           </ul>
           <a class="button button-primary" href="https://buy.stripe.com/cNi14o0ykdzJdOlbfEf3a0a">Start for £59/month</a>
         </article>
-
       </div>
       <p class="checkout-note">Secure checkout powered by Stripe.</p>
     </section>
