@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Order Confirmed — GetMyVideo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --ink:#101316;
+  --charcoal:#171b1f;
+  --paper:#f5f2eb;
+  --white:#fff;
+  --muted:#6f7478;
+  --gold:#c8a86b;
+  --line:rgba(16,19,22,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(980px,calc(100% - 32px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.12em;font-size:.9rem}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(16,19,22,.35);border-radius:50%;font-size:.7rem}
+.small{font-size:.82rem;color:var(--muted)}
+.hero{padding:46px 0 20px;text-align:center}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.2em;color:#8b6c35;margin-bottom:16px}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.03em}
+h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:1;margin:0 0 18px}
+.hero p{max-width:720px;margin:0 auto;color:var(--muted);font-size:1.05rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 20px 60px rgba(32,27,17,.06)}
+.panel{max-width:860px;margin:32px auto 70px}
+.package-box{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:#fbfaf6;margin-bottom:24px}
+.package-box strong{font-family:'Playfair Display',serif;font-size:1.35rem}
+.package-price{font-family:'Playfair Display',serif;font-size:2rem}
+label{display:block;font-weight:700;font-size:.9rem;margin:18px 0 8px}
+input,textarea,select{width:100%;border:1px solid #d8d2c8;background:#fff;border-radius:12px;padding:13px 14px;font:inherit;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 22px;font-weight:800;cursor:pointer;font:inherit}
+.button-primary{background:var(--gold);color:#111}
+.button-dark{background:var(--ink);color:#fff}
+.button-wide{width:100%;margin-top:24px}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+.success-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:var(--gold);font-size:2rem;margin:0 auto 22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.step{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.step span{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:#9a7942}
+.step h3{font-size:1.35rem;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:.9rem}
+.footer{background:#0a0d0f;color:#fff;padding:26px 0;margin-top:40px}
+.footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer .small{color:#90969a}
+.package-extra{display:none}
+.package-extra.show{display:block}
+@media(max-width:700px){
+  .grid-2,.steps{grid-template-columns:1fr}
+  .package-box{align-items:flex-start;flex-direction:column}
+  .hero{padding-top:28px}
+  .card{padding:22px}
+  .footer .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="https://getmyvideo.co.uk">
+      <span class="brand-mark">GMV</span><span>GETMYVIDEO</span>
+    </a>
+    <span class="small">Order confirmed</span>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="success-icon">✓</div>
+      <div class="eyebrow">PAYMENT RECEIVED</div>
+      <h1>Your package is confirmed.</h1>
+      <p>Thanks for your order. Because you've purchased from a personalised property preview, we already have the property material we need to continue.</p>
+    </section>
+
+    <section class="panel wrap">
+      <div class="card">
+        <div class="package-box">
+          <div>
+            <span class="small">PURCHASED PACKAGE</span><br>
+            <strong id="packageName">GetMyVideo package</strong>
+          </div>
+          <div class="package-price" id="packagePrice"></div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Payment confirmed</h3>
+            <p>Your Stripe payment has been received securely.</p>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <h3>We finish your order</h3>
+            <p>We'll prepare the clean final files and any extras included in your package.</p>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <h3>We contact you</h3>
+            <p>We'll use the contact details supplied at checkout if we need anything else.</p>
+          </div>
+        </div>
+
+        <div id="websiteMessage" class="package-extra" style="margin-top:24px;padding:18px;border-radius:14px;background:#fbf7ef;border:1px solid #e5d5b5">
+          <strong>Website package purchased</strong>
+          <p style="margin:6px 0 0;color:var(--muted)">We'll contact you to confirm your preferred domain name, booking link and any final website details before launch.</p>
+        </div>
+
+        <a class="button button-dark button-wide" href="https://getmyvideo.co.uk">Back to GetMyVideo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="https://getmyvideo.co.uk"><span class="brand-mark">GMV</span><span>GETMYVIDEO</span></a>
+      <span class="small">© GetMyVideo.co.uk</span>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get('package');
+    const packages = {
+      '99':  {name:'Premium Property Video', price:'£99'},
+      '149': {name:'Video + Social Launch', price:'£149'},
+      '349': {name:'Property Website + Film', price:'£349'}
+    };
+    const chosen = packages[p] || {name:'GetMyVideo package', price:''};
+    document.getElementById('packageName').textContent = chosen.name;
+    document.getElementById('packagePrice').textContent = chosen.price;
+    if (p === '349') document.getElementById('websiteMessage').classList.add('show');
+  </script>
+</body>
+</html>
