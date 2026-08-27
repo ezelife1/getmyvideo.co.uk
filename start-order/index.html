@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Start Your GetMyVideo Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --ink:#101316;
+  --charcoal:#171b1f;
+  --paper:#f5f2eb;
+  --white:#fff;
+  --muted:#6f7478;
+  --gold:#c8a86b;
+  --line:rgba(16,19,22,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(980px,calc(100% - 32px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.12em;font-size:.9rem}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(16,19,22,.35);border-radius:50%;font-size:.7rem}
+.small{font-size:.82rem;color:var(--muted)}
+.hero{padding:46px 0 20px;text-align:center}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.2em;color:#8b6c35;margin-bottom:16px}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.03em}
+h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:1;margin:0 0 18px}
+.hero p{max-width:720px;margin:0 auto;color:var(--muted);font-size:1.05rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 20px 60px rgba(32,27,17,.06)}
+.panel{max-width:860px;margin:32px auto 70px}
+.package-box{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:#fbfaf6;margin-bottom:24px}
+.package-box strong{font-family:'Playfair Display',serif;font-size:1.35rem}
+.package-price{font-family:'Playfair Display',serif;font-size:2rem}
+label{display:block;font-weight:700;font-size:.9rem;margin:18px 0 8px}
+input,textarea,select{width:100%;border:1px solid #d8d2c8;background:#fff;border-radius:12px;padding:13px 14px;font:inherit;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 22px;font-weight:800;cursor:pointer;font:inherit}
+.button-primary{background:var(--gold);color:#111}
+.button-dark{background:var(--ink);color:#fff}
+.button-wide{width:100%;margin-top:24px}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+.success-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:var(--gold);font-size:2rem;margin:0 auto 22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.step{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.step span{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:#9a7942}
+.step h3{font-size:1.35rem;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:.9rem}
+.footer{background:#0a0d0f;color:#fff;padding:26px 0;margin-top:40px}
+.footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer .small{color:#90969a}
+.package-extra{display:none}
+.package-extra.show{display:block}
+@media(max-width:700px){
+  .grid-2,.steps{grid-template-columns:1fr}
+  .package-box{align-items:flex-start;flex-direction:column}
+  .hero{padding-top:28px}
+  .card{padding:22px}
+  .footer .wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="https://getmyvideo.co.uk">
+      <span class="brand-mark">GMV</span><span>GETMYVIDEO</span>
+    </a>
+    <span class="small">Secure order setup</span>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="eyebrow">PAYMENT RECEIVED</div>
+      <h1>Let's create your property.</h1>
+      <p>Thanks for your order. Send us the property details below and we'll use them to start your GetMyVideo project.</p>
+    </section>
+
+    <section class="panel wrap">
+      <div class="card">
+        <div class="package-box">
+          <div>
+            <span class="small">YOUR PACKAGE</span><br>
+            <strong id="packageName">GetMyVideo order</strong>
+          </div>
+          <div class="package-price" id="packagePrice"></div>
+        </div>
+
+        <!-- Replace YOUR_EMAIL_ADDRESS below with the email address that should receive new orders. -->
+        <form id="orderForm">
+          <input type="hidden" name="Package" id="packageField" value="GetMyVideo order">
+
+          <div class="grid-2">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="Name" type="text" required>
+            </div>
+            <div>
+              <label for="email">Email address</label>
+              <input id="email" name="Email" type="email" required>
+            </div>
+          </div>
+
+          <label for="property">Property name</label>
+          <input id="property" name="Property name" type="text" required>
+
+          <label for="listing">Airbnb / Booking.com / property listing URL</label>
+          <input id="listing" name="Listing URL" type="url" placeholder="https://..." required>
+
+          <label for="photos">Photos <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <input id="photos" name="Photo link" type="url" placeholder="Google Drive, Dropbox, WeTransfer, etc.">
+          <p class="note">If your listing already has good-quality photos, leave this blank. Otherwise add a Google Drive, Dropbox or WeTransfer link.</p>
+
+          <label for="notes">Anything you'd like us to know?</label>
+          <textarea id="notes" name="Notes" placeholder="Key features to highlight, preferred style, wording, music direction, etc."></textarea>
+
+          <div class="package-extra" id="websiteFields">
+            <label for="domain">Preferred domain name</label>
+            <input id="domain" name="Preferred domain" type="text" placeholder="e.g. thesailcottage.co.uk">
+
+            <label for="booking">Where should website booking enquiries go?</label>
+            <input id="booking" name="Booking destination" type="text" placeholder="Airbnb URL, Booking.com URL, email or booking system">
+          </div>
+
+          <button class="button button-primary button-wide" type="submit">Send Details on WhatsApp</button>
+          <p class="note">Your payment has already been completed securely through Stripe. Tapping the button opens WhatsApp with your order details ready to send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="https://getmyvideo.co.uk"><span class="brand-mark">GMV</span><span>GETMYVIDEO</span></a>
+      <span class="small">© GetMyVideo.co.uk</span>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get('package');
+    const packages = {
+      '99':  {name:'Premium Property Video', price:'£99'},
+      '149': {name:'Video + Social Launch', price:'£149'},
+      '349': {name:'Property Website + Film', price:'£349'}
+    };
+    const chosen = packages[p] || {name:'GetMyVideo order', price:''};
+    document.getElementById('packageName').textContent = chosen.name;
+    document.getElementById('packagePrice').textContent = chosen.price;
+    document.getElementById('packageField').value = chosen.name + (chosen.price ? ' - ' + chosen.price : '');
+    if (p === '349') document.getElementById('websiteFields').classList.add('show');
+
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const get = id => document.getElementById(id)?.value.trim() || '';
+      const lines = [
+        'NEW GETMYVIDEO ORDER',
+        '',
+        'Package: ' + document.getElementById('packageField').value,
+        'Name: ' + get('name'),
+        'Email: ' + get('email'),
+        'Property: ' + get('property'),
+        'Listing: ' + get('listing')
+      ];
+
+      if (get('photos')) lines.push('Photos: ' + get('photos'));
+      if (p === '349' && get('domain')) lines.push('Preferred domain: ' + get('domain'));
+      if (p === '349' && get('booking')) lines.push('Booking destination: ' + get('booking'));
+      if (get('notes')) lines.push('Notes: ' + get('notes'));
+
+      const message = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'https://wa.me/447367856186?text=' + message;
+    });
+  </script>
+</body>
+</html>
