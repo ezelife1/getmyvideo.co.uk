@@ -184,6 +184,158 @@
       #pricing .price-card ul{grid-template-columns:1fr!important}
       #pricing .price-card li{font-size:.78rem!important}
     }
+
+    /* Live property website showcase */
+    .website-demo-section{
+      padding-top:clamp(70px,8vw,120px);
+      padding-bottom:clamp(70px,8vw,120px);
+      background:#f6f1e8;
+      overflow:hidden;
+    }
+    .website-demo-wrap{
+      width:min(1180px,calc(100vw - 40px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);
+      gap:clamp(34px,5vw,72px);
+      align-items:center;
+    }
+    .website-demo-copy .eyebrow{margin-bottom:14px}
+    .website-demo-copy h2{
+      margin:0 0 18px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.3rem,4.4vw,4.8rem);
+      line-height:.98;
+      letter-spacing:-.035em;
+      color:#111416;
+    }
+    .website-demo-copy p{
+      margin:0 0 24px;
+      max-width:560px;
+      font-size:clamp(1rem,1.2vw,1.13rem);
+      line-height:1.7;
+      color:#5d6268;
+    }
+    .website-demo-free{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin:26px 0 30px;
+      padding:18px 20px;
+      border:1px solid rgba(17,20,22,.12);
+      border-radius:16px;
+      background:rgba(255,255,255,.62);
+    }
+    .website-demo-free strong{
+      display:block;
+      margin-bottom:3px;
+      color:#111416;
+      font-size:.95rem;
+    }
+    .website-demo-free span{
+      color:#64686d;
+      font-size:.88rem;
+      line-height:1.5;
+    }
+    .website-demo-check{
+      width:28px;height:28px;min-width:28px;
+      display:grid;place-items:center;
+      border-radius:999px;
+      background:#c8a86b;
+      color:#111;
+      font-weight:900;
+    }
+    .website-browser{
+      position:relative;
+      border:1px solid rgba(17,20,22,.12);
+      border-radius:22px;
+      background:#111416;
+      padding:10px;
+      box-shadow:0 28px 70px rgba(17,20,22,.18);
+      transform:rotate(1deg);
+    }
+    .website-browser-bar{
+      height:36px;
+      display:flex;
+      align-items:center;
+      gap:7px;
+      padding:0 10px;
+    }
+    .website-browser-bar i{
+      width:8px;height:8px;border-radius:50%;
+      display:block;background:#d9d2c5;
+    }
+    .website-browser-url{
+      margin-left:6px;
+      height:20px;
+      flex:1;
+      border-radius:999px;
+      background:rgba(255,255,255,.09);
+      color:rgba(255,255,255,.62);
+      font-size:.62rem;
+      display:flex;
+      align-items:center;
+      padding:0 12px;
+      overflow:hidden;
+      white-space:nowrap;
+    }
+    .website-browser-screen{
+      position:relative;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      border-radius:14px;
+      background:#eee;
+    }
+    .website-browser-screen iframe{
+      position:absolute;
+      inset:0;
+      width:1440px;
+      height:900px;
+      border:0;
+      transform:scale(.54);
+      transform-origin:top left;
+      pointer-events:none;
+      background:#fff;
+    }
+    .website-demo-hit{
+      position:absolute;
+      inset:0;
+      z-index:4;
+      border-radius:22px;
+    }
+    .website-demo-badge{
+      position:absolute;
+      right:22px;
+      bottom:22px;
+      z-index:5;
+      background:#fff;
+      color:#111416;
+      border-radius:999px;
+      padding:11px 16px;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.03em;
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+      pointer-events:none;
+    }
+    @media (max-width:900px){
+      .website-demo-wrap{grid-template-columns:1fr}
+      .website-demo-copy{text-align:center}
+      .website-demo-copy p{margin-left:auto;margin-right:auto}
+      .website-demo-free{max-width:620px;margin-left:auto;margin-right:auto;text-align:left}
+      .website-browser{transform:none}
+    }
+    @media (max-width:600px){
+      .website-demo-wrap{width:calc(100vw - 28px)}
+      .website-browser{padding:7px;border-radius:17px}
+      .website-browser-screen{border-radius:11px;aspect-ratio:4/3}
+      .website-browser-screen iframe{
+        width:1180px;height:885px;
+        transform:scale(.39);
+      }
+      .website-demo-badge{right:14px;bottom:14px;padding:9px 12px;font-size:.68rem}
+    }
+
   </style>
 
 
@@ -229,7 +381,7 @@
         <p>We take your existing photography and create smooth, premium property films designed for listings, websites and social media.</p>
       </div>
       <div class="video-card">
-        <video controls playsinline preload="metadata" poster="assets/sample-property-poster.jpg">
+        <video controls playsinline preload="metadata">
           <source src="assets/sample-property-film.mp4" type="video/mp4" />
         </video>
         <div class="video-meta">
@@ -266,6 +418,46 @@
       </div>
     </section>
 
+
+    <section class="section website-demo-section" id="website-demo">
+      <div class="website-demo-wrap">
+        <div class="website-demo-copy">
+          <div class="eyebrow dark">PROPERTY WEBSITE DEMO</div>
+          <h2>See what your property could become.</h2>
+          <p>We don't just create cinematic property films. We can turn your property into a premium standalone website designed around your photography, film, amenities and booking journey.</p>
+
+          <div class="website-demo-free">
+            <div class="website-demo-check">✓</div>
+            <div>
+              <strong>FREE personalised website demo with every £99 video order</strong>
+              <span>See your own property presented as a premium website before deciding whether you want to take it live.</span>
+            </div>
+          </div>
+
+          <a class="button button-dark" href="https://preview.getmyvideo.co.uk/sailloft/website/" target="_blank" rel="noopener">
+            View live property website demo
+          </a>
+        </div>
+
+        <div class="website-browser" aria-label="Preview of a GetMyVideo property website">
+          <div class="website-browser-bar">
+            <i></i><i></i><i></i>
+            <div class="website-browser-url">preview.getmyvideo.co.uk/sailloft/website/</div>
+          </div>
+          <div class="website-browser-screen">
+            <iframe
+              src="https://preview.getmyvideo.co.uk/sailloft/website/"
+              title="Sail Loft property website demo"
+              loading="lazy"
+              tabindex="-1"
+              aria-hidden="true"></iframe>
+          </div>
+          <a class="website-demo-hit" href="https://preview.getmyvideo.co.uk/sailloft/website/" target="_blank" rel="noopener" aria-label="Open the live GetMyVideo property website demo"></a>
+          <div class="website-demo-badge">VIEW LIVE DEMO ↗</div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="pricing">
       <div class="section-heading narrow">
         <div class="eyebrow dark">STRAIGHTFORWARD PRICING</div>
@@ -289,8 +481,9 @@
             <li>Property name, location &amp; key features</li>
             <li>16:9 HD master</li>
             <li>9:16 social-ready version</li>
+            <li><strong>FREE personalised property website demo</strong></li>
           </ul>
-          <a class="button button-dark" href="https://buy.stripe.com/bJebJ2bcY2V539HcjIf3a07">Get the £99 video</a>
+          <a class="button button-dark" href="https://buy.stripe.com/bJebJ2bcY2V539HcjIf3a07">Get the £99 video + free website demo</a>
         </article>
 
         <article class="price-card">
